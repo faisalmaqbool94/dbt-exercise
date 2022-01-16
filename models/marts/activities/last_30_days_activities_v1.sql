@@ -2,6 +2,12 @@
 we am just keeping the timestamp (not formatting or parsing it to be DATE), assuming we can do that in our dashboard and keep it as timestamp in case 
 we need to analyze things on timezones. 
 */
+{{
+    config(
+        materialized = 'table'
+    )
+}}
+
 % set pivot_cols = dbt_utils.get_column_values(table=ref('stg_user_event_v1'), column='event_name') %}
 select 
 
