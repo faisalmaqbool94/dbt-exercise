@@ -1,5 +1,6 @@
 /* In the requirement the destination event_name_last_date is expected to be DATE...
-we am just keeping the timestamp (not formatting or parsing it to be DATE), assuming we can do that in our dashboard and keep it as timestamp in case 
+we are just keeping the timestamp (not formatting or parsing it to be DATE),
+assuming we can do that in our dashboard and keep it as timestamp in case 
 we need to analyze things on timezones.
 If necessary, we can Extract date from timestamp with specific timezone like
 
