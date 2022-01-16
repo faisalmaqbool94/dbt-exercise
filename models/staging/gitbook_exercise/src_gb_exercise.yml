@@ -68,3 +68,10 @@ sources:
             owner: Faisal/Rémi
           tags:
             - events
+models:
+    #segregated the staging area from raw data
+    - name: stg_users_v1
+      description: users staging model #random description for now
+      colums:
+      - name: user_id
+        description: {{ doc("user_id") }}
