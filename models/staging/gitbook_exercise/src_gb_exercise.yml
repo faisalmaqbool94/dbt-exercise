@@ -1,0 +1,70 @@
+version: 2
+
+sources:
+    - name: gb_exercise
+      schema: itw_test
+      database: gitbook-analytics
+      tables:
+        #users
+        - name: users
+          #identifier: data_...*
+          description: User base features data via stitch
+          loader: stitchdata
+          loaded_at_field: _extracted_at
+          freshness:
+            #Used same and hypothetical number, should always be set as per requirements
+            warn_after:
+              #to set warnings subjective to business requirements and working model
+              count: 1
+              period: hour
+            error_after:
+              count: 1
+              period: day
+          meta:
+            owner: Faisal/Rémi
+          tags:
+            - user
+          columns:
+            - name: user_id
+              tests:
+                - unique
+                - not_null
+            # ..similarly we can respectively add other properties
+        # company
+        - name: company
+          #identifier: data_...*
+          description: Company features data via stitch
+          loader: stitchdata
+          loaded_at_field: _extracted_at
+          freshness:
+            #Used same and hypothetical number, should always be set as per requirements
+            warn_after:
+              #to set warnings subjective to business requirements and working model
+              count: 1
+              period: hour
+            error_after:
+              count: 1
+              period: day
+          meta:
+            owner: Faisal/Rémi
+          tags:
+            - company
+        #User events
+        - name: user_event
+          #identifier: data_...*
+          description: User events data via stitch
+          loader: stitchdata
+          loaded_at_field: _extracted_at
+          freshness:
+            #Used same and hypothetical number, should always be set as per requirements
+            warn_after:
+              #to set warnings subjective to business requirements and working model
+              count: 1
+              period: hour
+            error_after:
+              count: 1
+              period: day
+          meta:
+            owner: Faisal/Rémi
+          tags:
+            - events
