@@ -12,7 +12,7 @@ on usr.user_id = usr_ev.user_id
 , member_count_per_company_over_time as (
 
 select 
-format_timestamp("%b'%g", event_datetime) activity_month
+format_timestamp("%b'%g", event_datetime) activity_month -- Added the same format as it was shown in the graph but we could use any formatted or parsed version
 , company_id
 , count(distinct user_id) member_count
 
