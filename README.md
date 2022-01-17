@@ -3,7 +3,7 @@ Dbt exercise
 ### Analysis (Required Models)
 
 - Past 30 days user activity table [View solution](https://github.com/faisalmaqbool94/dbt-exercise/blob/main/models/marts/activities/last_30_days_activities_v1.sql)
-- Evolution of a member [View solution](https://github.com/faisalmaqbool94/dbt-exercise/blob/main/models/marts/evolution/user_company_stats_v1.sql)
+- Evolution of members [View solution](https://github.com/faisalmaqbool94/dbt-exercise/blob/main/models/marts/evolution/user_company_stats_v1.sql)
 
 ### Data Stack
 
