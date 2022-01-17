@@ -5,6 +5,10 @@ Dbt exercise
 - Past 30 days user activity table [View solution](https://github.com/faisalmaqbool94/dbt-exercise/blob/main/models/marts/activities/last_30_days_activities_v1.sql)
 - Evolution of a member [View solution](https://github.com/faisalmaqbool94/dbt-exercise/blob/main/models/marts/evolution/user_company_stats_v1.sql)
 
+### Data Stack
+
+- Intro and Data Stack [link](https://docs.google.com/presentation/d/1u7R2M6pNzSH6UnEwMES801k-NuxFBDpJ/edit?usp=sharing&ouid=114582501525272580012&rtpof=true&sd=true)
+
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Utitlity functions for dbt project [utils](https://github.com/dbt-labs/dbt-utils)
