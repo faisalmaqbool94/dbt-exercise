@@ -1,0 +1,39 @@
+# hypothetical production workflow
+name: Scheduled Production run
+
+on:
+    schedule:
+        - cron: '0 * * * *' # run every hour
+
+env:
+    DBT_PROFILE_SA_PK: ${{ secrets.DBT_PROFILE_SA_PK }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: deploy to production
+      run: |
+        dbt run --profiles-dir=ci_profiles --target=prod
+        dbt source snapshot-freshness --profiles-dir=ci_profiles --target=prod
+    - name: Slack Notification
+      uses: lazy-actions/slatify@master
+      if: failure()
+      with:
+        type: ${{ job.status }}
+        job_name: '*Scheduled Production Run*'
+        channel: '#data-tribe' # use your team or specific channel for slack notification in case fo failure
+        url: ${{ secrets.SLACK_WEBHOOK }}
