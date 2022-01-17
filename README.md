@@ -1,15 +1,16 @@
-Welcome to your new dbt project!
+Dbt exercise
+ 
+### Analysis (Required Models)
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
+- Past 30 days user activity table [View solution](https://github.com/faisalmaqbool94/dbt-exercise/blob/main/models/marts/activities/last_30_days_activities_v1.sql)
+- Evolution of a member [View solution](https://github.com/faisalmaqbool94/dbt-exercise/blob/main/models/marts/evolution/user_company_stats_v1.sql)
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- Utitlity functions for dbt project [utils](https://github.com/dbt-labs/dbt-utils)
+- A framework for managing and maintaining multi-language pre-commit hooks [Pre-commit](https://pre-commit.com/#intro)
+- Pre-commit credits:
+  * https://github.com/berset/sqlint
+  * https://github.com/matsuzaki215/sqlint
+- [Github Actions](https://docs.github.com/en/actions/learn-github-actions)
+- Ignore sample sales data (under data folder). This is just to test the scalibility of my models [source link](https://eforexcel.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/)
