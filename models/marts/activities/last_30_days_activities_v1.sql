@@ -19,7 +19,7 @@ select
 user_id
 , {% for pivot_col in pivot_cols %}
     sum(case when event_name = '{{pivot_col}}' then 1 else 0 end)  as `{{pivot_col}}_count`
-    , max(case when event_name = '{{pivot_col}}' then event_datetime else null end) as `{{pivot_col}}_lastUse`
+    , max(case when event_name = '{{pivot_col}}' then event_datetime else null end) as `{{pivot_col}}_last_date`
     {% if not loop.last %}, {% endif%}
 {% endfor %}
 from {{ ref('stg_user_event_v1') }}
